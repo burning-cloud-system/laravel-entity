@@ -1,0 +1,19 @@
+{
+    "name": "burning-cloud-system/laravel-entity",
+    "description": "The Burning Cloud Logger Fragment.",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5@dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "burning-cloud-system",
+            "email": "package@burning-cloud.net"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4"
+    }
+}
