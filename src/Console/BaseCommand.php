@@ -91,7 +91,7 @@ abstract class BaseCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return is_dir(app_path('Entitys')) ? $rootNamespace.'\\Entitys' : $rootNamespace;
+        return $rootNamespace.'\\Entitys';
     }
 
     /**
