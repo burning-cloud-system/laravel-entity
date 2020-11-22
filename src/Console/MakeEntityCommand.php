@@ -88,9 +88,9 @@ class MakeEntityCommand extends BaseCommand
     {
         if ($this->option('property')) 
         {
-            return $this->repository->getProperties($this->tableName, $this->getPropertyStub());
+            return $this->repository->getProperties($this->tableName, $this->files->get($this->getPropertyStub()));
         }
-        return $this->repository->getProperties($this->tableName, $this->getPropertyStub());
+        return $this->repository->getProperties($this->tableName, $this->files->get($this->getPropertyStub()));
     }
 
     /**
