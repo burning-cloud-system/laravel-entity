@@ -161,29 +161,4 @@ class DatabaseEntityRepository
         }
         return $result;
     }
-
-    /**
-     * Replace the namespace for the given stub.
-     *
-     * @param  string  $stub
-     * @param  string  $name
-     * @return $this
-     */
-    protected function replaceColumn(&$stub, $name)
-    {
-        $searchs = [
-            ['{{ namespace }}' , '{{namespace}}'],
-            ['{{ class }}'     , '{{class}}'],
-            ['{{ class_data }}', '{{class_data}}']
-        ];
-        foreach ($this->getSearchs() as $search) {
-            $stub = str_replace(
-                $search,
-                [$this->getNamespace($name), $this->rootNamespace(), $this->replaceClassData()],
-                $stub
-            );
-        }
-
-        return $this;
-    }
 }

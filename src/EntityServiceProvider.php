@@ -18,13 +18,8 @@ class EntityServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole())
         {
             $this->publishes([
-                __DIR__.'/Commands/stubs' => $this->app->basePath('stubs')
+                __DIR__.'/Console/stubs' => $this->app->basePath('stubs')
             ], 'stubs');
-
-            // // Set commands.
-            // $this->commands([
-            //     MakeEntityCommand::class
-            // ]);
         }
 
 
@@ -42,8 +37,8 @@ class EntityServiceProvider extends ServiceProvider
             $this->registerRepository();
             $this->registerMakeEntityCommand();
 
-            $this->mergeConfigFrom(
-                __DIR__.'/../config/entity.php', 'entity');    
+            // $this->mergeConfigFrom(
+            //     __DIR__.'/../config/entity.php', 'entity');    
         }
     }
 
