@@ -155,7 +155,7 @@ class DatabaseEntityRepository
                         $stub
                     );    
                 }
-                $result .= $stub;
+                $result .= "\n".$stub;
 
             }
         }

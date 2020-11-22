@@ -114,19 +114,19 @@ abstract class BaseCommand extends GeneratorCommand
      */
     protected function replaceNamespace(&$stub, $name)
     {
-        $searchs = [
-            ['{{ namespace }}' , '{{namespace}}'],
-            ['{{ class }}'     , '{{class}}'],
-            ['{{ class_data }}', '{{class_data}}']
-        ];
-        foreach ($searchs as $search) {
-            $stub = str_replace(
-                $search,
-                [$this->getNamespace($name), $this->rootNamespace(), $this->replaceClassData()],
-                $stub
-            );
-        }
-
+        $stub = str_replace('{{ namespace }}', $this->getNamespace($name), $stub);
         return $this;
+    }
+
+    /**
+     * Replace the class name for the given stub.
+     *
+     * @param  string  $stub
+     * @param  string  $name
+     * @return string
+     */
+    protected function replaceClass($stub, $name)
+    {
+        return parent::replaceClass($stub, $name);
     }
 }

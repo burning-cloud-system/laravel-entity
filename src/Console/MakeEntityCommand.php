@@ -80,6 +80,19 @@ class MakeEntityCommand extends BaseCommand
     }
 
     /**
+     * Replace the class name for the given stub.
+     *
+     * @param  string  $stub
+     * @param  string  $name
+     * @return string
+     */
+    protected function replaceClass($stub, $name)
+    {        
+        $stub = parent::replaceClass($stub, $name);
+        return str_replace('{{ class_data }}', $this->replaceClassData(), $stub);
+    }
+
+    /**
      * Get replace class data.
      *
      * @return string
