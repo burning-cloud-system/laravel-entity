@@ -89,12 +89,6 @@ class DatabaseEntityRepository
      */
     public function getProperties(string $tableName, string $propertyStub)
     {
-        $searchs = [
-            ['{{ property }}'  , '{{property}}'],
-            ['{{ data_type }}' , '{{data_type}}'],
-            ['{{ comment }}'   , '{{comment}}']
-        ];
-
         $result = '';
         foreach($this->builder->getColumnList($tableName) as $columnName => $column)
         {
@@ -103,7 +97,7 @@ class DatabaseEntityRepository
                 $stub = $propertyStub;
 
                 $columnName     = Str::studly($column[Builder::FIELD_COLUMN_NAME]);
-                $columnCommennt = $column[Builder::FIELD_COLUMN_COMMENT];
+                $columnComment  = $column[Builder::FIELD_COLUMN_COMMENT];
                 $columnDataType = '';
                 switch(Str::upper($column[Builder::FIELD_DATA_TYPE]))
                 {
@@ -146,16 +140,11 @@ class DatabaseEntityRepository
                         $columnDataType = 'mixed';
                         break;
                 }
+                $stub = str_replace('{{ property }}'    , $columnName       , $stub);
+                $stub = str_replace('{{ data_type }}'   , $columnDataType   , $stub);
+                $stub = str_replace('{{ comment }}'     , $columnComment    , $stub);
 
-                foreach($searchs as $search)
-                {
-                    $stub = str_replace(
-                        $search,
-                        [$columnName, $columnDataType, $columnCommennt],
-                        $stub
-                    );    
-                }
-                $result .= "\n".$stub;
+                $result .= "\n\n".$stub;
 
             }
         }
