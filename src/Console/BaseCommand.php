@@ -91,7 +91,7 @@ abstract class BaseCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.'\\Entitys';
+        return $rootNamespace.'\\'.Str::plural('Entity');
     }
 
     /**
