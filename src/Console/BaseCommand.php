@@ -119,7 +119,7 @@ abstract class BaseCommand extends GeneratorCommand
             ['{{ class }}'     , '{{class}}'],
             ['{{ class_data }}', '{{class_data}}']
         ];
-        foreach ($this->getSearchs() as $search) {
+        foreach ($searchs as $search) {
             $stub = str_replace(
                 $search,
                 [$this->getNamespace($name), $this->rootNamespace(), $this->replaceClassData()],
