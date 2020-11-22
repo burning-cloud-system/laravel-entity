@@ -144,7 +144,7 @@ class DatabaseEntityRepository
                 $stub = str_replace('{{ data_type }}'   , $columnDataType   , $stub);
                 $stub = str_replace('{{ comment }}'     , $columnComment    , $stub);
 
-                $result .= "\n\n".$stub;
+                $result .= "\n".$stub."\n";
 
             }
         }

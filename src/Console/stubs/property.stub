@@ -1,7 +1,7 @@
-/**
- * Define the property [{{ property }}]. 
- * {{ comment }}
- * 
- * @var {{ data_type }}
- */
-public ${{ property }};
+    /**
+     * Define the property [{{ property }}]. 
+     * {{ comment }}
+     * 
+     * @var {{ data_type }}
+     */
+    public ${{ property }};
