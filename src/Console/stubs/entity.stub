@@ -1,0 +1,10 @@
+<?php
+
+namespace {{ namespace }};
+
+use BurningCloudSystem\Entity\Entity;
+
+class {{ class }} extends Entity
+{
+{{ class_data }}
+}

@@ -2,9 +2,7 @@
     "name": "burning-cloud-system/laravel-entity",
     "description": "The Burning Cloud Logger Fragment.",
     "type": "library",
-    "require-dev": {
-        "phpunit/phpunit": "^9.5@dev"
-    },
+    "homepage": "https://github.com/burning-cloud-system/laravel-entity",
     "license": "MIT",
     "authors": [
         {
@@ -12,8 +10,26 @@
             "email": "package@burning-cloud.net"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
-        "php": "^7.4"
-    }
+        "php": "^7.4",
+        "illuminate/support": "^8.0",
+        "illuminate/console": "^8.0",
+        "illuminate/database": "^8.0",
+        "Illuminate/filesystem": "^8.0"
+    },
+    "require-dev": {
+        "laravel/framework": "^8.0",
+        "phpunit/phpunit": "^9.5@dev"
+    },          
+    "autoload": {
+        "psr-4": {
+            "BurningCloudSystem\\Entity\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BurningCloudSystem\\Entity\\Tests\\": "tests"
+        }
+    },
+    "minimum-stability": "dev"
 }
