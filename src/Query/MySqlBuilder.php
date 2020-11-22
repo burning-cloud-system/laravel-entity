@@ -43,19 +43,19 @@ class MySqlBuilder extends Builder
         foreach($columnList as $columnObj)
         {
             $obj = (object) $columnObj;
-            $results[$obj->column_name] = [
-                Builder::FIELD_TABLE_SCHEMA   => $obj->table_schema,
-                Builder::FIELD_TABLE_NAME     => $obj->table_name,
-                Builder::FIELD_COLUMN_NAME    => $obj->column_name,
-                Builder::FIELD_COLUMN_DEFAULT => $obj->column_default,
-                Builder::FIELD_IS_NULLABLE    => $obj->is_nullable,
-                Builder::FIELD_DATA_TYPE      => $obj->data_type,
-                Builder::FIELD_CHARACTER_MAXIMUM_LENGTH => $obj->character_maximum_length,
-                Builder::FIELD_NUMERIC_SCALE  => $obj->numeric_scale,
-                Builder::FIELD_COLUMN_TYPE    => $obj->column_type,
-                Builder::FIELD_COLUMN_KEY     => $obj->column_key,
-                Builder::FIELD_EXTRA          => $obj->extra,
-                Builder::FIELD_COLUMN_COMMENT => $obj->column_comment
+            $results[$obj->COLUMN_NAME] = [
+                Builder::FIELD_TABLE_SCHEMA   => $obj->TABLE_SCHEMA,
+                Builder::FIELD_TABLE_NAME     => $obj->TABLE_NAME,
+                Builder::FIELD_COLUMN_NAME    => $obj->COLUMN_NAME,
+                Builder::FIELD_COLUMN_DEFAULT => $obj->COLUMN_DEFAULT,
+                Builder::FIELD_IS_NULLABLE    => $obj->IS_NULLABLE,
+                Builder::FIELD_DATA_TYPE      => $obj->DATA_TYPE,
+                Builder::FIELD_CHARACTER_MAXIMUM_LENGTH => $obj->CHARACTER_MAXIMUM_LENGTH,
+                Builder::FIELD_NUMERIC_SCALE  => $obj->NUMERIC_SCALE,
+                Builder::FIELD_COLUMN_TYPE    => $obj->COLUMN_TYPE,
+                Builder::FIELD_COLUMN_KEY     => $obj->COLUMN_KEY,
+                Builder::FIELD_EXTRA          => $obj->EXTRA,
+                Builder::FIELD_COLUMN_COMMENT => $obj->COLUMN_COMMENT
             ];
         }
         return $results;
